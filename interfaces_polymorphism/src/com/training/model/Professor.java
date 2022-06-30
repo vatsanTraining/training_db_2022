@@ -15,12 +15,8 @@ public class Professor implements Conditional {
 
     @Override
     public boolean test() {
-        boolean result = false;
+        return  college.equalsIgnoreCase("nit");
 
-        if(college.equalsIgnoreCase("nit")){
-            result = true;
-        }
-        return result;
 
     }
 

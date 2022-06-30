@@ -15,13 +15,9 @@ public class Student implements Conditional {
 
     @Override
     public boolean test() {
-        boolean result = false;
+        return  qualification.equalsIgnoreCase("ug");
 
-        if(qualification.equalsIgnoreCase("ug")){
-            result = true;
-        }
-        return result;
-    }
+           }
 
     @Override
     public String toString() {

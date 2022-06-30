@@ -18,12 +18,8 @@ public class Doctor extends MyBusinessService implements Conditional {
 
     @Override
     public boolean test() {
-        boolean result = false;
+        return specialization.equalsIgnoreCase("ent");
 
-        if(specialization.equalsIgnoreCase("ent")){
-            result = true;
-        }
-        return result;
 
     }
 
