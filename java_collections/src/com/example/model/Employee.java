@@ -1,6 +1,8 @@
 package com.example.model;
 
-public class Employee {
+import java.util.Objects;
+
+public class Employee implements Comparable<Employee> {
 
     private int employeeId;
     private String employeeName;
@@ -46,5 +48,28 @@ public class Employee {
                 ", employeeName='" + employeeName + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+       return employeeName.compareTo(o.employeeName);
+
+//        if(this.employeeId <o.employeeId) return 1;
+//        if(this.employeeId>o.employeeId) return -1;
+//        return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return employeeId == employee.employeeId && Double.compare(employee.salary, salary) == 0
+                && Objects.equals(employeeName, employee.employeeName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId, employeeName, salary);
     }
 }

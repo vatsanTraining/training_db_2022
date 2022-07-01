@@ -9,6 +9,11 @@ public class Application {
         EmployeeService service =
                  new EmployeeService();
 
-        service.usingArrayList();
+        //service.usingArrayList();
+       // service.usingHashSet();
+      //  service.usingTreeSet();
+        service.usingHashMap();
     }
+
+
 }
